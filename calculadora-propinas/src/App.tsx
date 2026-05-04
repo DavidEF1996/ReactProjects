@@ -2,10 +2,12 @@ import { menuItems } from "./db/db"
 import Item from "./components/Item"
 import useOrder from "./hooks/useOrder"
 import OrdenContent from "./components/OrdenContent"
+import OrderTotals from "./components/OrderTotals"
+import OrderPropinas from "./components/OrderPropinas"
 
 function App() {
 
-  const {order,addItem} = useOrder()
+  const {order,addItem, deleteOrder,propina, setPropina, saveOrder} = useOrder()
 
   return (
     <>
@@ -36,8 +38,23 @@ function App() {
         <div  className="space-y-2 mt-8">
            <OrdenContent 
           order={order}
+          deleteOrder={deleteOrder}
          />
         </div>
+               <div>
+          <OrderPropinas 
+          setPropina={setPropina}
+          propina={propina}
+          />
+        </div>
+        <div>
+          <OrderTotals 
+          order={order}
+          propina={propina}
+          saveOrder={saveOrder}
+          />
+        </div>
+     
       </div>
     </div>
     </>
