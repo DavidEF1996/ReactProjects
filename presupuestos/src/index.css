@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "../node_modules/react-swipeable-list/dist/styles.css";
+
+/* Mantiene el calendario por encima del modal y dentro de la pantalla. */
+.react-date-picker__calendar {
+    width: min(350px, calc(100vw - 2rem));
+    max-width: calc(100vw - 2rem);
+    z-index: 50;
+}
